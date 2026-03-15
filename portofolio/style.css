@@ -275,7 +275,7 @@ h2 {
 .cert-card:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: var(--primary-color);
-  border-style: solid;
+  border-style: dashed;
 }
 
 .cert-icon {
@@ -322,11 +322,33 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* --- BAGIAN RESPONSIVE KHUSUS HP --- */
+/* --- FIX NAV BAR BIAR MUNCUL DI HP --- */
 @media (max-width: 768px) {
-  /* 1. Biar teks Hero nggak nabrak pinggir layar */
+  /* 1. Navigasi: Kita bikin berjejer rapi di tengah */
+  nav ul {
+    display: flex !important; /* MUNCULIN LAGI */
+    gap: 15px !important;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap; /* Biar kalau gak muat, dia turun ke bawah */
+  }
+
+  nav .container {
+    flex-direction: column; /* Nama lo di atas, menu di bawahnya */
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 0.8rem; /* Kecilin dikit biar muat */
+  }
+
+  /* 2. Hero Section: Turunin dikit biar gak ketutup Nav */
+  .hero {
+    padding-top: 120px !important;
+  }
+
   .hero h1 {
-    font-size: 2.2rem !important; /* Ukuran teks judul dikecilkan */
+    font-size: 2.2rem !important;
     padding: 0 15px;
   }
 
@@ -335,29 +357,18 @@ footer {
     padding: 0 20px;
   }
 
-  /* 2. Biar foto profil ukurannya pas di layar kecil */
+  /* 3. Foto & Grid (Tetap Aman) */
   .profile-img {
     width: 140px !important;
     height: 140px !important;
   }
 
-  /* 3. INI KUNCINYA: Biar Card Project jadi lebar (nggak kurus) */
-  .project-grid {
-    grid-template-columns: 1fr !important; /* Paksa jadi 1 kolom saja */
+  .project-grid,
+  .cert-grid {
+    grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
 
-  /* 4. Biar Card Sertifikat juga lebar */
-  .cert-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* 5. Sembunyikan navigasi atas sementara biar nggak numpuk */
-  nav ul {
-    display: none !important;
-  }
-
-  /* 6. Atur jarak antar section biar nggak terlalu renggang */
   section {
     padding: 60px 0 !important;
   }
