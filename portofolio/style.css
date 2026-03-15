@@ -322,14 +322,43 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* =========================================
-   8. RESPONSIVE
-   ========================================= */
+/* --- BAGIAN RESPONSIVE KHUSUS HP --- */
 @media (max-width: 768px) {
+  /* 1. Biar teks Hero nggak nabrak pinggir layar */
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem !important; /* Ukuran teks judul dikecilkan */
+    padding: 0 15px;
   }
+
+  .hero p {
+    font-size: 1rem !important;
+    padding: 0 20px;
+  }
+
+  /* 2. Biar foto profil ukurannya pas di layar kecil */
+  .profile-img {
+    width: 140px !important;
+    height: 140px !important;
+  }
+
+  /* 3. INI KUNCINYA: Biar Card Project jadi lebar (nggak kurus) */
+  .project-grid {
+    grid-template-columns: 1fr !important; /* Paksa jadi 1 kolom saja */
+    gap: 20px !important;
+  }
+
+  /* 4. Biar Card Sertifikat juga lebar */
+  .cert-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 5. Sembunyikan navigasi atas sementara biar nggak numpuk */
   nav ul {
-    display: none;
+    display: none !important;
+  }
+
+  /* 6. Atur jarak antar section biar nggak terlalu renggang */
+  section {
+    padding: 60px 0 !important;
   }
 }
